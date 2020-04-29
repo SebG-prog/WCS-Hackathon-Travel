@@ -13,18 +13,19 @@ const LandingPage = () => {
     }
     return (
         <div className="landingPage">
-            <p>Memory Travel</p>
-            <NavLink activeClassName="active" exact to='/mainpage'>
-            <button className="" >Enter</button>
-            </NavLink>
-            
-            <button onClick={openModal}>Open Modal</button>
-            <Modal>
-                <h1>Modal Header</h1>
-                <p>
-                    Lorem im
-                </p>
-            </Modal>
+            <div className="landing-text">
+                <p className="memory-travel">Memory Travel Game</p>
+                <NavLink activeClassName="active" exact to='/mainpage'>
+                <button className="button-enter" >Enter</button>
+                </NavLink>
+                <button onClick={openModal}>Open Modal</button>
+                <Modal>
+                    <h1>Modal Header</h1>
+                    <p>
+                        Lorem im
+                    </p>
+                </Modal>
+            </div>
         </div>
     )
 }
