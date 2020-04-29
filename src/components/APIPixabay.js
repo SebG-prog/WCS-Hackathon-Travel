@@ -3,9 +3,11 @@ import React, { useState, useEffect } from "react";
 import GameSession from './GameSession'
 import axios from "axios";
 
+
 const API_KEY = "16289190-97a0bc0be3bee47cca51d8097";
 const query1 = "france";
 const query2 = "food";
+const maxNbCards = 8
 
 function APIPixabay() {
   const [data, setData] = useState([]);
@@ -19,7 +21,7 @@ function APIPixabay() {
         image_type: "photo",
       },
     });
-    setData(shuffle(result.data.hits).slice(0, 8));
+    setData(shuffle(result.data.hits).slice(0, maxNbCards));
     setIsLoaded(!isLoaded);
   };
 
@@ -39,7 +41,7 @@ function APIPixabay() {
 }
 
     const tab1 = data.map((picture, index)=> ({id: index, type: picture.webformatURL}))
-    const tab2 = data.map((picture, index)=> ({id: index + 8, type: picture.webformatURL}))
+    const tab2 = data.map((picture, index)=> ({id: index + maxNbCards, type: picture.webformatURL}))
     const cards = [...tab1, ...tab2]
     console.log(shuffle(cards))
     console.log(cards)
@@ -51,7 +53,7 @@ function APIPixabay() {
         <p>Category : {query2}</p>
       </div>
       {isLoaded ? (
-        <GameSession shuffledCards={shuffle(cards)}/>
+        <GameSession shuffledCards={shuffle(cards)} maxNbCards={maxNbCards}/>
       ) : (
         <div>loading...</div>
       )} 

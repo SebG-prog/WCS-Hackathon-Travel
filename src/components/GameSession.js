@@ -1,11 +1,21 @@
 import React, { useState, useEffect } from 'react'
 import Board from './Board'
+import Timer from "./Timer";
 
-const GameSession = ({shuffledCards}) => {
+const GameSession = ({shuffledCards, maxNbCards}) => {
     const [cards, setCards] = useState(shuffledCards) 
     const [flipped, setFlipped] = useState([])
     const [solved, setSolved] = useState([])
     const [disabled, setDisabled] = useState(false)
+    const [counter, setCounter] = useState(60);
+    const [endGame, setEndGame] = useState(false)
+    const [gameOver, setGameOver] = useState(false)
+
+    useEffect(() => {
+        const timer =
+            counter > 0 && setInterval(() => setCounter(counter - 1), 1000);
+        return () => clearInterval(timer);
+    }, [counter]);
 
     useEffect(() => {
         setCards(shuffledCards)
@@ -16,6 +26,14 @@ const GameSession = ({shuffledCards}) => {
     useEffect(() => {
         preloadImages()
     })
+
+    useEffect(()=> {
+        if (solved.length === maxNbCards * 2) {setEndGame(true)} 
+    }, [solved])
+
+    useEffect(()=> {
+        if (counter === 0) {setGameOver(true)} 
+    }, [counter])
 
     const preloadImages = () => {
         cards.map((card) => {
@@ -56,7 +74,8 @@ const GameSession = ({shuffledCards}) => {
 
     return (
         <div className="App" >
-            <h1>Memory</h1>
+            <h1>{endGame ? "Congratulation!" : gameOver ? "Game Over!" : "Memory"}</h1>
+            <Timer counter={counter}/>
             <Board
                 cards={cards}
                 flipped={flipped}
