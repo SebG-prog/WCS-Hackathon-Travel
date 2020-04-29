@@ -1,12 +1,12 @@
 import React from "react"
+import "./MainPage.css"
 
 import ApiFilter from './ApiFilter'
 import APIPixabay from './APIPixabay'
 
-
 const MainPage = () => {
     return (
-        <div>
+        <div className='mainPage'>
             <ApiFilter />
             <APIPixabay />
         </div>
