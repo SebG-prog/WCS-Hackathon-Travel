@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 
+import Autocomplete from "./Autocomplete";
+
 const GameSettings = () => {
   const [input, setInput] = useState({})
 
@@ -12,7 +14,21 @@ const GameSettings = () => {
     <form>
       <div>
         <label>Which country do you want to travel to?</label>
-        <input type="text" name="country" onChange={handleInputChange} />
+        {/* <input type="text" name="country" onChange={handleInputChange} /> */}
+        <Autocomplete
+        suggestions={[
+          "Alligator",
+          "Bask",
+          "Crocodilian",
+          "Death Roll",
+          "Eggs",
+          "Jaws",
+          "Reptile",
+          "Solitary",
+          "Tail",
+          "Wetlands"
+        ]}
+      />
       </div>
       <div>
         <label>What attracts you most?</label>
