@@ -10,9 +10,9 @@ const query2 = "food";
 function APIPixabay() {
   const [data, setData] = useState([]);
   const [isLoaded, setIsLoaded] = useState(false);
-  
+
   const fetchData = async () => {
-  const result = await axios("https://pixabay.com/api/", {
+    const result = await axios("https://pixabay.com/api/", {
       params: {
         key: API_KEY,
         q: `${query1} + ${query2}`,
@@ -30,19 +30,17 @@ function APIPixabay() {
   const shuffle = (array) => {
     const _array = array.slice(0)
     for (let i = 0; i < array.length - 1; i++) {
-        let randomIndex = Math.floor(Math.random() * (i + 1))
-        let temp = _array[i]
-        _array[i] = _array[randomIndex]
-        _array[randomIndex] = temp
+      let randomIndex = Math.floor(Math.random() * (i + 1))
+      let temp = _array[i]
+      _array[i] = _array[randomIndex]
+      _array[randomIndex] = temp
     }
     return _array
-}
+  }
 
-    const tab1 = data.map((picture, index)=> ({id: index, type: picture.webformatURL}))
-    const tab2 = data.map((picture, index)=> ({id: index + 8, type: picture.webformatURL}))
-    const cards = [...tab1, ...tab2]
-    console.log(shuffle(cards))
-    console.log(cards)
+  const tab1 = data.map((picture, index) => ({ id: index, type: picture.webformatURL }))
+  const tab2 = data.map((picture, index) => ({ id: index + 8, type: picture.webformatURL }))
+  const cards = [...tab1, ...tab2]
 
   return (
     <div className="App">
@@ -51,10 +49,10 @@ function APIPixabay() {
         <p>Category : {query2}</p>
       </div>
       {isLoaded ? (
-        <GameSession shuffledCards={shuffle(cards)}/>
+        <GameSession shuffledCards={shuffle(cards)} />
       ) : (
-        <div>loading...</div>
-      )} 
+          <div>loading...</div>
+        )}
     </div>
   );
 }
