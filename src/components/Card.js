@@ -12,13 +12,13 @@ const Card = ({ solved, disabled, handleClick, id, flipped, height, width, type 
             onClick={() => disabled ? null : handleClick(id)}
         >
             <div className="flipper">
-            <img
-                style={{
-                    height, width
-                }}
-                className={flipped ? 'front' : 'back'}
-                src={flipped || solved ? type : `/img/back.png`}
-                alt="memory" />
+                <img
+                    style={{
+                        height, width
+                    }}
+                    className={flipped ? 'front' : 'back'}
+                    src={flipped || solved ? type : `/img/plane.jpg`}
+                    alt="memory" />
             </div>
         </div>
     );
