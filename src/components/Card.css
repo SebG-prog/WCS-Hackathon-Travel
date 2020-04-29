@@ -2,7 +2,7 @@
     perspective: 1000px;
     display: inline-block;
     border: 1px solid white;
-    background: black;
+    border-radius: 10px;
 }
 
 .flip-container.flipped .flipper {
@@ -19,13 +19,14 @@
 .back {
     backface-visibility: hidden;
     position: absolute;
+    border-radius: 10px;
+    border: 2px dotted pink;
     left: 0;
     top: 0;
 }
 
 .back {
     z-index: 2;
-    /* for firefox 31 */
     transform: rotateX(0deg);
 }
 

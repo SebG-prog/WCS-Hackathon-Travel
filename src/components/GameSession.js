@@ -7,10 +7,6 @@ const GameSession = ({shuffledCards}) => {
     const [solved, setSolved] = useState([])
     const [disabled, setDisabled] = useState(false)
 
-    useEffect(() => {
-        setCards(shuffledCards)
-    }, []) 
-
     /* const cards = shuffledCards */
 
     useEffect(() => {
