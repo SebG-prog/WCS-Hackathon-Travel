@@ -44,29 +44,6 @@ function APIPixabay() {
     console.log(shuffle(cards))
     console.log(cards)
 
-  /* const initializeDeck = () => {
-    
-  }
- 
-    initializeDeck() */
-
-    
-
-    /* const data.map(d => ({d.id, d.webformatURL})) */
-    /* let id = 0
-    const cards = ['react', 'reactu', 'redux', 'vue', 'angular', 'javascript', 'ruby', 'rails'].reduce((acc, type) => {
-        acc.push({
-            id: id++,
-            type
-        })
-        acc.push({
-            id: id++,
-            type
-        })
-        return acc
-    }, []) */
-    /* return shuffle(cards)
-} */
   return (
     <div className="App">
       <div>
@@ -74,7 +51,7 @@ function APIPixabay() {
         <p>Category : {query2}</p>
       </div>
       {isLoaded ? (
-         <GameSession shuffledCards={shuffle(cards)}/>
+        <GameSession shuffledCards={shuffle(cards)}/>
       ) : (
         <div>loading...</div>
       )} 
@@ -83,13 +60,3 @@ function APIPixabay() {
 }
 
 export default APIPixabay;
-
-
-/* {/* <div>
-          {data.map((picture) => (
-            <div key={picture.id}>
-              <p>Photo id {picture.id} </p>
-              <img src={picture.webformatURL} alt=""></img>
-            </div>
-          ))}
-        </div> */
