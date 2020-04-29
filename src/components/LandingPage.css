@@ -6,7 +6,7 @@
     border-radius: 100%;
     width: 80px;
     height: 80px;
-    color: #dd7631;
+    color: #be1010;
     background-color: rgb(4, 4, 43);
     font-family: 'Righteous', cursive;
     font-size: 20px;
@@ -14,6 +14,7 @@
 }
 
 .landingPage {
+    background-color: #0098ca;
     background-image: url(./travel.png);
     background-size: 100%;
     background-repeat:no-repeat;
@@ -52,7 +53,7 @@
 
 .memory-travel {
     display: flex;
-    color: #dd7631;
+    color: #be1010;
     font-size: 80px;
     font-family: 'Righteous', cursive;
     margin-bottom: 30px;
