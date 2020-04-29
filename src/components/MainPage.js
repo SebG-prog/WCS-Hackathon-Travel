@@ -1,10 +1,15 @@
 import React from "react"
 
+import ApiFilter from './ApiFilter'
+import APIPixabay from './APIPixabay'
 
 
 const MainPage = () => {
     return (
-        <div>Main Page</div>
+        <div>
+            <ApiFilter />
+            <APIPixabay />
+        </div>
     )
 }
 
