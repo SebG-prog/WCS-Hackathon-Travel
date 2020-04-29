@@ -9,8 +9,11 @@ const shuffle = (array) => {
     return _array
 }
 
-export default function initialzeDeck() {
-    let id = 0
+export default function initializeDeck({data}) {
+    const cards = data.map(d => ({id: d.id, type: d.webformatURL}))
+
+    /* const data.map(d => ({d.id, d.webformatURL})) */
+    /* let id = 0
     const cards = ['react', 'reactu', 'redux', 'vue', 'angular', 'javascript', 'ruby', 'rails'].reduce((acc, type) => {
         acc.push({
             id: id++,
@@ -21,6 +24,6 @@ export default function initialzeDeck() {
             type
         })
         return acc
-    }, [])
+    }, []) */
     return shuffle(cards)
 }
