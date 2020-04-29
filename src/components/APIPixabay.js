@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 import GameSession from './GameSession'
+import Loader from './Loader'
 import axios from "axios";
 
 const API_KEY = "16289190-97a0bc0be3bee47cca51d8097";
@@ -38,9 +39,9 @@ function APIPixabay() {
     return _array
   }
 
-  const tab1 = data.map((picture, index) => ({ id: index, type: picture.webformatURL }))
-  const tab2 = data.map((picture, index) => ({ id: index + 8, type: picture.webformatURL }))
-  const cards = [...tab1, ...tab2]
+    const tab1 = data.map((picture, index)=> ({id: index, type: picture.webformatURL}))
+    const tab2 = data.map((picture, index)=> ({id: index + 8, type: picture.webformatURL}))
+    const cards = [...tab1, ...tab2]
 
   return (
     <div className="App">
@@ -48,13 +49,15 @@ function APIPixabay() {
         <p>Query: {query1}</p>
         <p>Category : {query2}</p>
       </div>
+      
       {isLoaded ? (
         <GameSession shuffledCards={shuffle(cards)} />
       ) : (
-          <div>loading...</div>
-        )}
+        <Loader />
+      )} 
     </div>
   );
 }
 
 export default APIPixabay;
+// {isLoading && !isLoaded && 
