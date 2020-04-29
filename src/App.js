@@ -17,7 +17,6 @@ function App() {
       <Switch>
         <Route exact path="/" component={LandingPage} />
         <Route path="/mainpage" component={MainPage} />
-        <Route path="/APIPixabay" component={APIPixabay} />
       </Switch>
     </div>
   );
