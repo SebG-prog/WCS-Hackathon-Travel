@@ -1,5 +1,5 @@
 import React, { useRef } from "react"
-import { NavLink } from "react-router-dom"
+
 
 import Modal from './Modal'
 import GameSettings from './GameSettings'
@@ -13,9 +13,6 @@ const LandingPage = () => {
         <div className="landingPage">
             <div className="landing-text">
                 <p className="memory-travel">Memory Travel Game</p>
-                {/* <NavLink activeClassName="active" exact to='/mainpage'>
-                <button className="button-enter" >Enter</button>
-                </NavLink> */}
                 <button className="button-enter" onClick={() => modalRef.current.openModal()}>Enter</button>
                 <Modal ref={modalRef} >
                     <h1>New Game</h1>
