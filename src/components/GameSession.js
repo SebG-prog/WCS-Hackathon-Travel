@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import Board from './Board'
 
-const GameSession = ({shuffledCards}) => {
-    const [cards, setCards] = useState(shuffledCards) 
+const GameSession = ({ shuffledCards }) => {
+    // const [cards, setCards] = useState(shuffledCards) 
     const [flipped, setFlipped] = useState([])
     const [solved, setSolved] = useState([])
     const [disabled, setDisabled] = useState(false)
-
-    /* const cards = shuffledCards */
+    const cards = shuffledCards
 
     useEffect(() => {
         preloadImages()
@@ -32,7 +31,7 @@ const GameSession = ({shuffledCards}) => {
                 setSolved([...solved, flipped[0], id])
                 resetCards()
             } else {
-                setTimeout(resetCards, 2000)
+                setTimeout(resetCards, 1000)
             }
         }
     }
@@ -52,7 +51,8 @@ const GameSession = ({shuffledCards}) => {
 
     return (
         <div className="App" >
-            <h1>Memory</h1>
+            <h1 className="game-title">Flip and Match!</h1>
+            <button onClick={resetCards}> Restart </button>
             <Board
                 cards={cards}
                 flipped={flipped}
