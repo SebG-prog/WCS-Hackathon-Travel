@@ -17,10 +17,6 @@ const GameSession = ({shuffledCards, maxNbCards}) => {
         return () => clearInterval(timer);
     }, [counter]);
 
-    useEffect(() => {
-        setCards(shuffledCards)
-    }, []) 
-
     /* const cards = shuffledCards */
 
     useEffect(() => {

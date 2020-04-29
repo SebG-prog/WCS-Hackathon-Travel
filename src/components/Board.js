@@ -12,8 +12,8 @@ const Board = ({ solved, disabled, cards, flipped, handleClick }) => {
                         key={card.id}
                         id={card.id}
                         type={card.type}
-                        height={90}
-                        width={128}
+                        height={180}
+                        width={256}
                         flipped={flipped.includes(card.id)}
                         solved={solved.includes(card.id)}
                         handleClick={handleClick}
