@@ -4,7 +4,7 @@ import GameSession from './GameSession'
 import axios from "axios";
 
 const API_KEY = "16289190-97a0bc0be3bee47cca51d8097";
-const query1 = "brazil";
+const query1 = "france";
 const query2 = "food";
 
 function APIPixabay() {
@@ -19,7 +19,7 @@ function APIPixabay() {
         image_type: "photo",
       },
     });
-    setData(result.data.hits.slice(0, 8));
+    setData(shuffle(result.data.hits).slice(0, 8));
     setIsLoaded(!isLoaded);
   };
 
