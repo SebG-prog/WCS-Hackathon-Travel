@@ -17,7 +17,7 @@ const Card = ({ solved, disabled, handleClick, id, flipped, height, width, type 
                     height, width
                 }}
                 className={flipped ? 'front' : 'back'}
-                src={flipped || solved ? `/img/${type}.png` : `/img/back.png`}
+                src={flipped || solved ? type : `/img/back.png`}
                 alt="memory" />
             </div>
         </div>

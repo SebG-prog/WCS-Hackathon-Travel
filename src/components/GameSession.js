@@ -1,16 +1,17 @@
 import React, { useState, useEffect } from 'react'
 import Board from './Board'
-import initializeDeck from './Deck'
 
-const GameSession = () => {
-    const [cards, setCards] = useState([])
+const GameSession = ({shuffledCards}) => {
+    const [cards, setCards] = useState(shuffledCards) 
     const [flipped, setFlipped] = useState([])
     const [solved, setSolved] = useState([])
     const [disabled, setDisabled] = useState(false)
 
     useEffect(() => {
-        setCards(initializeDeck())
-    }, [])
+        setCards(shuffledCards)
+    }, []) 
+
+    /* const cards = shuffledCards */
 
     useEffect(() => {
         preloadImages()
@@ -18,7 +19,7 @@ const GameSession = () => {
 
     const preloadImages = () => {
         cards.map((card) => {
-            const src = `/img/${card.type}.png`
+            const src = card.type
             return new Image().scr = src
         })
     }
