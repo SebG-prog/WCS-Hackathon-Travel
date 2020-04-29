@@ -10,8 +10,8 @@ import MainPage from './components/MainPage';
 function App() {
   return (
     <div className="App">
-      <GameSession/>
-      <APIPixabay />
+      {/* <GameSession/>
+      <APIPixabay /> */}
         <Switch>
         <Route exact path="/" component={LandingPage} />
         <Route path="/mainpage" component={MainPage} />
