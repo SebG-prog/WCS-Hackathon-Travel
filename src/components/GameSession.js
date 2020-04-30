@@ -4,7 +4,7 @@ import Timer from "./Timer";
 
 import './GameSession.css'
 
-const GameSession = ({ shuffledCards, restart }) => { 
+const GameSession = ({ shuffledCards, restart }) => {
     const [flipped, setFlipped] = useState([])
     const [solved, setSolved] = useState([])
     const [disabled, setDisabled] = useState(false)
