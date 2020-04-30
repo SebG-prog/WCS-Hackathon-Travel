@@ -49,3 +49,36 @@
     font-family: 'Righteous', cursive;
     margin-bottom: 30px;
 }
+
+.close-btn {
+    display: inline-block;
+    background-color: white;
+    margin-top: 2rem;
+    margin-bottom: 3.5rem;
+    border: none;
+    border-radius: 50%;
+    font-family: "Abel", sans-serif;
+    font-size: 20px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #FF5E5B;
+    box-shadow: 0 3px 0 #FF5E5B;
+    cursor: pointer;
+    transition: all 100ms linear;
+    position: absolute;
+    top: 0%;
+    left: 87%;
+}
+
+.close-btn:hover {
+    -moz-transform: translateY(-4px);
+    -o-transform: translateY(-4px);
+    -ms-transform: translateY(-4px);
+    transform: translateY(-4px);
+    transform: translateY(-4px);
+    box-shadow: 0 7px 0 #FF5E5B;
+}
+
+.close-btn:focus {
+    outline: 0;
+}

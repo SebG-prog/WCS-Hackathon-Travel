@@ -14,8 +14,8 @@ const LandingPage = () => {
                 <button className="button-enter" onClick={() => modalRef.current.openModal()}>Enter</button>
                 <Modal ref={modalRef} >
                     <h1>New Game</h1>
+                    <button className="close-btn" onClick={() => modalRef.current.closeModal()}>X</button>
                     <GameSettings />
-                    <button onClick={() => modalRef.current.closeModal()}>Close</button>
                 </Modal>
             </div>
         </div>
