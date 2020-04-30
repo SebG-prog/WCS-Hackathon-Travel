@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import Board from './Board'
 
-const GameSession = ({ shuffledCards }) => {
-    // const [cards, setCards] = useState(shuffledCards) 
+import './GameSession.css'
+
+const GameSession = ({ shuffledCards, restart }) => { 
     const [flipped, setFlipped] = useState([])
     const [solved, setSolved] = useState([])
     const [disabled, setDisabled] = useState(false)
@@ -52,7 +53,7 @@ const GameSession = ({ shuffledCards }) => {
     return (
         <div className="App" >
             <h1 className="game-title">Flip and Match!</h1>
-            <button onClick={resetCards}> Restart </button>
+            <button className="restart-btn" onClick={restart}> Restart </button>
             <Board
                 cards={cards}
                 flipped={flipped}
