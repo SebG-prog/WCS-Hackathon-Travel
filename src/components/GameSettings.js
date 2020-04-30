@@ -107,7 +107,6 @@ const GameSettings = () => {
   return (
     <div>
       <form>
-        <div>
           <label>Which country do you want to travel to?</label>
           <Autocomplete
             onChange={onChange}
@@ -115,7 +114,7 @@ const GameSettings = () => {
             userInput={userInput}
             suggestionsListComponent={suggestionsListComponent}
           />
-        </div>
+        <p>Choose a category</p>
         <div className="cat-container" >
           {
             categories.map((cat, index) =>
@@ -137,7 +136,7 @@ const GameSettings = () => {
           }
         </div>
         <NavLink activeClassName="active" exact to={{ pathname: '/mainpage', query2: getCat, query1: userInput }}>
-          <button>Start game</button>
+          <button className="start-btn setting-btn">Start game</button>
         </NavLink>
       </form>
     </div>
