@@ -1,21 +1,20 @@
 import React, { useState, useEffect, useRef } from 'react'
+import { NavLink } from "react-router-dom"
 import Board from './Board'
 import Timer from "./Timer"
-import { Link } from "react-router-dom"
 
 import Modal from './Modal'
 import GameSettings from './GameSettings'
 
 import './GameSession.css'
 
-const GameSession = ({ shuffledCards, restart, query1, query2 }) => {
+const GameSession = ({ shuffledCards, restart, query1, query2, idCountry }) => {
     const [flipped, setFlipped] = useState([])
     const [solved, setSolved] = useState([])
     const [disabled, setDisabled] = useState(false)
     const [counter, setCounter] = useState(60);
     const [endGame, setEndGame] = useState(false)
     const [gameOver, setGameOver] = useState(false)
-
     const cards = shuffledCards
 
     useEffect(() => {
@@ -42,8 +41,6 @@ const GameSession = ({ shuffledCards, restart, query1, query2 }) => {
     useEffect(() => {
         if (counter === 0) { setGameOver(true) }
     }, [counter])
-
-    
 
     const handleClick = (id) => {
         setDisabled(true)
@@ -74,15 +71,22 @@ const GameSession = ({ shuffledCards, restart, query1, query2 }) => {
         const flippedCard = cards.find(card => flipped[0] === card.id)
         return flippedCard.type === clickedCard.type
     }
-    const modalRef = useRef();
+
+    const modalRef = useRef()
+
     return (
         <div className="App" >
-
-
             <h1 className="game-title">Flip and Match!</h1>
-    <h2 style={{ color: 'white' }}>Your choice : {query1} and {query2}</h2>
+            <h2 style={{ color: 'white' }}>Your choice : {query1} and {query2}</h2>
             <Timer counter={counter} />
-            <h1>{endGame ? "Congratulation!" : gameOver && "Game Over!"}</h1>
+            <div>{endGame ? 
+            (<>
+                <h1>"Congratulation!" </h1>
+                <NavLink exact to={{ pathname: '/endpage', idCountry:{idCountry} }}>
+                <button >See what you got</button>
+                </NavLink>
+            </>)
+            : gameOver && "Game Over!"}</div>
             <Board
                 cards={cards}
                 flipped={flipped}
@@ -91,8 +95,7 @@ const GameSession = ({ shuffledCards, restart, query1, query2 }) => {
                 solved={solved}
             />
             <button className="restart-btn" onClick={restart}> Restart </button>
-            <Link to="/">
-            </Link>
+            
             <button className="restart-btn" onClick={() => modalRef.current.openModal()}>Change parameters</button>
             <Modal ref={modalRef} >
                     <h1>Change Parameters</h1>

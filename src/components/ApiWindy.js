@@ -27,7 +27,7 @@ function ApiWindy() {
     useEffect(() => {
         fetchData();
     }, []);
-    console.log("test", data)
+
     return (
         <div>
             {isLoaded ?

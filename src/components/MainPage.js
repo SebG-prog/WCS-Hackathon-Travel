@@ -46,9 +46,8 @@ function MainPage(props) {
     const tab1 = data.map((picture, index) => ({ id: index, type: picture.webformatURL }))
     const tab2 = data.map((picture, index) => ({ id: index + 8, type: picture.webformatURL }))
     const cards = [...tab1, ...tab2]
-    console.log("indexquery1 dns name coutrny", idCountries[nameCountry.map(name => name.toLowerCase()).indexOf(query1.toLowerCase())])
-
     const idCountry = idCountries[nameCountry.map(name => name.toLowerCase()).indexOf(query1.toLowerCase())]
+
     return (
         <div className="mainPage">
             {isLoaded ? (
