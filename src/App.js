@@ -7,7 +7,7 @@ import Footer from './components/Footer'
 
 
 import './App.css';
-import ApiWindy from './components/ApiWindy';
+// import ApiWindy from './components/ApiWindy';
 
 function App() {
   return (

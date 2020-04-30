@@ -15,6 +15,7 @@ const GameSettings = ({ restart }) => {
   const [filteredSuggestions, setFilteredSuggestions] = useState([])
   const [showSuggestions, setShowSuggestions] = useState(false)
   const [userInput, setUserInput] = useState("")
+  const [idInput, setIdInput] = useState('')
 
   const categories = [
     { type: 'food', img: '/img/food.jpg' },
@@ -143,7 +144,7 @@ const GameSettings = ({ restart }) => {
             )
           }
         </div>
-        <NavLink activeClassName="active" exact to={{ pathname: '/mainpage', query2: getCat, query1: userInput, idCountries: idFilter, nameCountry: dataFilter }}>
+        <NavLink activeClassName="active" exact to={{ pathname: '/mainpage', query2: getCat, query1: userInput, /*test: idFilter[dataFilter.findIndex(userInput)],*/ idCountries: idFilter, nameCountry: dataFilter }}>
           <button className="start-btn setting-btn" onClick={restart}>Start game</button>
         </NavLink>
       </form>
