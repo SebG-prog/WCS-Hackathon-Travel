@@ -5,7 +5,7 @@ import { Link } from "react-router-dom"
 
 import './GameSession.css'
 
-const GameSession = ({ shuffledCards, restart }) => {
+const GameSession = ({ shuffledCards, restart, query1, query2 }) => {
     const [flipped, setFlipped] = useState([])
     const [solved, setSolved] = useState([])
     const [disabled, setDisabled] = useState(false)
@@ -75,7 +75,7 @@ const GameSession = ({ shuffledCards, restart }) => {
 
 
             <h1 className="game-title">Flip and Match!</h1>
-            <h2 style={{ color: 'white' }}>Your choice : $Country and $ Category</h2>
+    <h2 style={{ color: 'white' }}>Your choice : {query1} and {query2}</h2>
             <Timer counter={counter} />
             <h1>{endGame ? "Congratulation!" : gameOver && "Game Over!"}</h1>
             <Board
