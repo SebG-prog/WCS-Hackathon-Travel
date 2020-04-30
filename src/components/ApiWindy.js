@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react"
+import { NavLink } from "react-router-dom"
 import axios from "axios"
 import Loader from "./Loader"
+
+import "./ApiWindy.css"
 
 const ApiWindy = props => {
     const [data, setData] = useState([]);
@@ -31,7 +34,11 @@ const ApiWindy = props => {
         <div>
             {isLoaded ?
                 (data.length !== 0 ?
-                    <div>{data.map(
+                    <div>
+                        <NavLink to="/">
+                            <button className="button-again">Play again?</button>
+                        </NavLink>
+                        {data.map(
                         (image, i) =>
                             <div key={i}>
                                 <div id="webcamGlobal">
