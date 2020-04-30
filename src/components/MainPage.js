@@ -44,7 +44,7 @@ function MainPage(props) {
     const tab1 = data.map((picture, index) => ({ id: index, type: picture.webformatURL }))
     const tab2 = data.map((picture, index) => ({ id: index + 8, type: picture.webformatURL }))
     const cards = [...tab1, ...tab2]
-
+    console.log(props)
     return (
         <div className="mainPage">
             {isLoaded ? (

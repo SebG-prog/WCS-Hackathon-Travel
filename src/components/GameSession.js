@@ -98,7 +98,7 @@ const GameSession = ({ shuffledCards, restart, query1, query2 }) => {
                     <h1>Change Parameters</h1>
                     <button className="close-btn" onClick={() => modalRef.current.closeModal()}>X</button>
                     <GameSettings restart={restart} />
-                </Modal>
+            </Modal>
         </div>
     );
 }

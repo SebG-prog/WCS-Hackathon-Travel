@@ -13,7 +13,7 @@ function App() {
   return (
     <div className="App">
       <Switch>
-        <ApiWindy/>
+        {/* <ApiWindy/> */}
         <Route exact path="/" component={LandingPage} />
         <Route path="/mainpage" component={MainPage} />
       </Switch>
