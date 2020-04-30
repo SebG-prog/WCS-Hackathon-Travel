@@ -1,17 +1,21 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import Board from './Board'
-import Timer from "./Timer";
+import Timer from "./Timer"
+import { Link } from "react-router-dom"
+
+import Modal from './Modal'
+import GameSettings from './GameSettings'
 
 import './GameSession.css'
 
-const GameSession = ({ shuffledCards, restart }) => {
+const GameSession = ({ shuffledCards, restart, query1, query2 }) => {
     const [flipped, setFlipped] = useState([])
     const [solved, setSolved] = useState([])
     const [disabled, setDisabled] = useState(false)
     const [counter, setCounter] = useState(60);
     const [endGame, setEndGame] = useState(false)
     const [gameOver, setGameOver] = useState(false)
-    
+
     const cards = shuffledCards
 
     useEffect(() => {
@@ -22,22 +26,24 @@ const GameSession = ({ shuffledCards, restart }) => {
 
     useEffect(() => {
         preloadImages()
-    })
-
-    useEffect(()=> {
-        if (solved.length === 8 * 2) {setEndGame(true)} 
-    }, [solved])
-
-    useEffect(()=> {
-        if (counter === 0) {setGameOver(true)} 
-    }, [counter])
+    }, [])
 
     const preloadImages = () => {
         cards.map((card) => {
             const src = card.type
-            return new Image().scr = src
+            return new Image().src = src
         })
     }
+
+    useEffect(() => {
+        if (solved.length === 8 * 2) { setEndGame(true) }
+    }, [solved])
+
+    useEffect(() => {
+        if (counter === 0) { setGameOver(true) }
+    }, [counter])
+
+    
 
     const handleClick = (id) => {
         setDisabled(true)
@@ -68,13 +74,15 @@ const GameSession = ({ shuffledCards, restart }) => {
         const flippedCard = cards.find(card => flipped[0] === card.id)
         return flippedCard.type === clickedCard.type
     }
-
+    const modalRef = useRef();
     return (
         <div className="App" >
-            <h1>{endGame ? "Congratulation!" : gameOver && "Game Over!"}</h1>
-            <Timer counter={counter}/>
+
+
             <h1 className="game-title">Flip and Match!</h1>
-            <button className="restart-btn" onClick={restart}> Restart </button>
+    <h2 style={{ color: 'white' }}>Your choice : {query1} and {query2}</h2>
+            <Timer counter={counter} />
+            <h1>{endGame ? "Congratulation!" : gameOver && "Game Over!"}</h1>
             <Board
                 cards={cards}
                 flipped={flipped}
@@ -82,6 +90,15 @@ const GameSession = ({ shuffledCards, restart }) => {
                 disabled={disabled}
                 solved={solved}
             />
+            <button className="restart-btn" onClick={restart}> Restart </button>
+            <Link to="/">
+            </Link>
+            <button className="restart-btn" onClick={() => modalRef.current.openModal()}>Change parameters</button>
+            <Modal ref={modalRef} >
+                    <h1>Change Parameters</h1>
+                    <button className="close-btn" onClick={() => modalRef.current.closeModal()}>X</button>
+                    <GameSettings restart={restart} />
+                </Modal>
         </div>
     );
 }

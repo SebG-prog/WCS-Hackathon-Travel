@@ -6,7 +6,7 @@ import axios from 'axios';
 
 import './GameSettings.css'
 
-const GameSettings = () => {
+const GameSettings = ({restart}) => {
   const [dataFilter, setDataFilter] = useState([])
   const [getCat, setGetCat] = useState('')
   const [isLoaded, setIsLoaded] = useState(false)
@@ -97,7 +97,7 @@ const GameSettings = () => {
       );
     } else {
       suggestionsListComponent = (
-        <div classClass="no-suggestions">
+        <div className="no-suggestions">
           <em>No suggestions, you're on your own!</em>
         </div>
       );
@@ -107,7 +107,6 @@ const GameSettings = () => {
   return (
     <div>
       <form>
-        <div>
           <label>Which country do you want to travel to?</label>
           <Autocomplete
             onChange={onChange}
@@ -115,7 +114,7 @@ const GameSettings = () => {
             userInput={userInput}
             suggestionsListComponent={suggestionsListComponent}
           />
-        </div>
+        <p>Choose a category</p>
         <div className="cat-container" >
           {
             categories.map((cat, index) =>
@@ -137,7 +136,7 @@ const GameSettings = () => {
           }
         </div>
         <NavLink activeClassName="active" exact to={{ pathname: '/mainpage', query2: getCat, query1: userInput }}>
-          <button>Start game</button>
+          <button className="start-btn setting-btn" onClick={restart}>Start game</button>
         </NavLink>
       </form>
     </div>

@@ -1,8 +1,9 @@
 
 input {
-    border: 1px solid #999;
+    border: 1px solid #FF5E5B;
     padding: 0.5rem;
-    width: 300px;
+    width: 200px;
+    border-radius: 30px;
 }
 
 .no-suggestions {

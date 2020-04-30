@@ -6,11 +6,10 @@ import axios from "axios";
 
 import "./MainPage.css"
 
-const API_KEY = "16289190-97a0bc0be3bee47cca51d8097";
-const query1 = "france";
-const query2 = "food";
-
-function MainPage() {
+function MainPage(props) {
+    const API_KEY = "16289190-97a0bc0be3bee47cca51d8097";
+    const query1 = props.location.query1;
+    const query2 = props.location.query2;
     const [data, setData] = useState([]);
     const [isLoaded, setIsLoaded] = useState(false);
 
@@ -22,13 +21,13 @@ function MainPage() {
                 q: `${query1} + ${query2}`,
                 image_type: "photo",
             },
-        })
-        setData(shuffle(result.data.hits).slice(0, 8));
+        });
+        setData(shuffle(result.data.hits).slice(0, 8))
         setIsLoaded(true);
     };
 
     useEffect(() => {
-        fetchData();
+        fetchData()
     }, []);
 
     const shuffle = (array) => {
@@ -49,7 +48,7 @@ function MainPage() {
     return (
         <div className="mainPage">
             {isLoaded ? (
-                <GameSession shuffledCards={shuffle(cards)} restart={fetchData} />
+                <GameSession shuffledCards={shuffle(cards)} restart={fetchData} query1={query1} query2={query2} />
             ) : (
                     <Loader />
                 )}
