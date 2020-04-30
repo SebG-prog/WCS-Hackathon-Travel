@@ -43,7 +43,6 @@ const GameSession = ({ shuffledCards, restart, query1, query2 }) => {
         if (counter === 0) { setGameOver(true) }
     }, [counter])
 
-
     const handleClick = (id) => {
         setDisabled(true)
         if (flipped.length === 0 && !flipped[id]) {
@@ -76,10 +75,8 @@ const GameSession = ({ shuffledCards, restart, query1, query2 }) => {
     const modalRef = useRef();
     return (
         <div className="App" >
-
-
             <h1 className="game-title">Flip and Match!</h1>
-    <h2 style={{ color: 'white' }}>Your choice : {query1} and {query2}</h2>
+            <h2 style={{ color: 'white' }}>Your choice : {query1} and {query2}</h2>
             <Timer counter={counter} />
             <h1>{endGame ? "Congratulation!" : gameOver && "Game Over!"}</h1>
             <Board
@@ -90,14 +87,12 @@ const GameSession = ({ shuffledCards, restart, query1, query2 }) => {
                 solved={solved}
             />
             <button className="restart-btn" onClick={restart}> Restart </button>
-            <Link to="/">
-            </Link>
             <button className="restart-btn" onClick={() => modalRef.current.openModal()}>Change parameters</button>
             <Modal ref={modalRef} >
-                    <h1>Change Parameters</h1>
-                    <button className="close-btn" onClick={() => modalRef.current.closeModal()}>X</button>
-                    <GameSettings restart={restart} />
-                </Modal>
+                <h1>Change Parameters</h1>
+                <button className="close-btn" onClick={() => modalRef.current.closeModal()}>X</button>
+                <GameSettings restart={restart} />
+            </Modal>
         </div>
     );
 }
