@@ -21,12 +21,12 @@ function MainPage(props) {
         image_type: "photo",
       },
     });
-    setData(shuffle(result.data.hits).slice(0, 8));
+    setData(shuffle(result.data.hits).slice(0, 8))
     setIsLoaded(!isLoaded);
   };
 
   useEffect(() => {
-    fetchData();
+    fetchData()
   }, []);
 
   const shuffle = (array) => {

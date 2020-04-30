@@ -77,7 +77,7 @@ const GameSettings = () => {
   if (showSuggestions && userInput) {
     if (filteredSuggestions.length) {
       suggestionsListComponent = (
-        <ul class="suggestions">
+        <ul className="suggestions">
           {filteredSuggestions.map((suggestion, index) => {
             let className
             if (index === activeSuggestion) {
