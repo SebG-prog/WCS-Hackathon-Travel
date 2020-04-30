@@ -6,11 +6,10 @@ import axios from "axios";
 
 import "./MainPage.css"
 
-const API_KEY = "16289190-97a0bc0be3bee47cca51d8097";
-const query1 = "france";
-const query2 = "food";
-
-function MainPage() {
+function MainPage(props) {
+  const API_KEY = "16289190-97a0bc0be3bee47cca51d8097";
+  const query1 = "france";
+  const query2 = props.location.state;
   const [data, setData] = useState([]);
   const [isLoaded, setIsLoaded] = useState(false);
 
@@ -48,7 +47,7 @@ function MainPage() {
   return (
     <div className="mainPage">
       {isLoaded ? (
-        <GameSession shuffledCards={shuffle(cards)}/>
+        <GameSession shuffledCards={shuffle(cards)} />
       ) : (
           <Loader />
         )}

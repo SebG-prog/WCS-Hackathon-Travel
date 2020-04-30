@@ -59,7 +59,7 @@ const GameSettings = () => {
             )
           }
         </div>
-        <NavLink activeClassName="active" exact to='/mainpage'>
+        <NavLink activeClassName="active" exact to={{ pathname: '/mainpage', state: getCat }}>
           <button>Start game</button>
         </NavLink>
       </form>
