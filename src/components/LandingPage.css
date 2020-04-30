@@ -1,16 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
 
-
 .landingPage { 
     display: flex;
     background-color: #0098ca;
-    background-image: url(./travel.png);
+    background-image: url(/img/travel.png);
     background-size: 100%;
     background-repeat:no-repeat;
     background-position: center;
     width: 100%;
-    min-height: 100vh;;
-      
+    min-height: 100vh;
    display: flex;
    justify-content: center;
    align-content: center;
@@ -35,19 +33,6 @@
     
 }
 
-/* .button-enter {
-    border-radius: 100%;
-    width: 5rem;
-    height: 5rem;
-    color: #be1010;
-    background-color: rgb(4, 4, 43);
-    font-family: 'Righteous', cursive;
-    margin-bottom: 30px;
-    font-size: 20px;
-    margin-left: auto;
-    margin-right: auto;
-    cursor:pointer;
-} */
 .button-enter {
     display: inline-block;
     background-color: white;
@@ -111,5 +96,4 @@
 .close-btn:focus {
     outline: 0;
 }
-    
 

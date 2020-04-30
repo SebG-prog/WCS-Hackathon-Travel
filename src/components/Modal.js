@@ -1,7 +1,6 @@
 import React, { useState, forwardRef, useImperativeHandle } from 'react';
 import ReactDOM from 'react-dom'
 
-
 import './Modal.css'
 
 const Modal = forwardRef((props, ref) => {
@@ -17,7 +16,6 @@ const Modal = forwardRef((props, ref) => {
     const open = () => setDisplay(true)
     const close = () => setDisplay(false)
 
-    
     if (display) {
         return ReactDOM.createPortal (
             <div className={"modal-wrapper"}>
@@ -28,7 +26,6 @@ const Modal = forwardRef((props, ref) => {
             </div>, document.getElementById("modal-root")
         )
     }
-
     return null
 })
 
