@@ -7,9 +7,11 @@ const category = "beach"
 const orderby = "popularity"
 const limit = 10
 
+//Timelapse in the player key
+
 function ApiWindy() {
     const [data, setData] = useState([]);
-    // const [data2, setData2] = useState([]); // A remettre pour la liste des pays en dessous
+    // const [data2, setData2] = useState([]); // A remettre pour voir la liste des pays dispo (en dessous)
     const [isLoaded, setIsLoaded] = useState(false);
 
     const fetchData = async () => {
@@ -44,7 +46,7 @@ function ApiWindy() {
         <div>
             {isLoaded ?
                 <div>{data.map(
-                    image => <img src={image.image.daylight.preview} />
+                    image => <img src={image.image.daylight.preview} /> 
                 )}
                 </div>
                 : "loading..."}
