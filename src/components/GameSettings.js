@@ -25,7 +25,7 @@ const GameSettings = () => {
   ]
 
   const fetchDataFilter = async () => {
-    const resultFilter = await axios('https://cors-anywhere.herokuapp.com/http://countryapi.gear.host/v1/Country/getCountries?')
+    const resultFilter = await axios('https://cors-anywhere.herokuapp.com/http://countryapi.gear.host/v1/Country/getCountries?pAreaFrom=25000')
     setDataFilter(resultFilter.data.Response.map(res => res.Name))
     setIsLoaded(!isLoaded)
   }
