@@ -6,7 +6,7 @@ import axios from "axios";
 
 import "./MainPage.css"
 
-function MainPage(props) {
+const MainPage = props => {
     const API_KEY = "16289190-97a0bc0be3bee47cca51d8097";
     const query1 = props.location.query1;
     const query2 = props.location.query2;

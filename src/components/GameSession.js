@@ -16,7 +16,7 @@ const GameSession = props => {
     const [endGame, setEndGame] = useState(false)
     const [gameOver, setGameOver] = useState(false)
     const cards = props.shuffledCards
-    console.log("1",props.idCountry)
+
     useEffect(() => {
         const timer =
             counter > 0 && setInterval(() => setCounter(counter - 1), 1000);

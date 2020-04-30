@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from "react"
 import axios from "axios"
+import Loader from "./Loader"
 
-
-
-
-function ApiWindy( props ) {
+const ApiWindy = props => {
     const [data, setData] = useState([]);
     const [isLoaded, setIsLoaded] = useState(false);
     const API_KEY = "v86LqZILmLPm1rCHTj4eDCcDGKc3Fveq";
@@ -52,10 +50,9 @@ function ApiWindy( props ) {
                     :
                     <h1>Sorry, but there is no footage from this location :/</h1>
                 )
-                : "loading..."}
+                : <Loader />}
         </div>
     )
-
 }
 
 export default ApiWindy
