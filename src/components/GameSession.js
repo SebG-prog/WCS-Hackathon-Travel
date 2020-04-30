@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import Board from './Board'
-import Timer from "./Timer";
-import LandingPage from './LandingPage'
-import {Link} from "react-router-dom"
+import Timer from "./Timer"
+import { Link } from "react-router-dom"
 
 import './GameSession.css'
 
@@ -13,7 +12,7 @@ const GameSession = ({ shuffledCards, restart }) => {
     const [counter, setCounter] = useState(60);
     const [endGame, setEndGame] = useState(false)
     const [gameOver, setGameOver] = useState(false)
-    
+
     const cards = shuffledCards
 
     useEffect(() => {
@@ -26,12 +25,12 @@ const GameSession = ({ shuffledCards, restart }) => {
         preloadImages()
     })
 
-    useEffect(()=> {
-        if (solved.length === 8 * 2) {setEndGame(true)} 
+    useEffect(() => {
+        if (solved.length === 8 * 2) { setEndGame(true) }
     }, [solved])
 
-    useEffect(()=> {
-        if (counter === 0) {setGameOver(true)} 
+    useEffect(() => {
+        if (counter === 0) { setGameOver(true) }
     }, [counter])
 
     const preloadImages = () => {
@@ -73,11 +72,11 @@ const GameSession = ({ shuffledCards, restart }) => {
 
     return (
         <div className="App" >
-            
-            
+
+
             <h1 className="game-title">Flip and Match!</h1>
-            <h2 style={{color:'white'}}>Your choice : $Country and $ Category</h2>
-            <Timer counter={counter}/>
+            <h2 style={{ color: 'white' }}>Your choice : $Country and $ Category</h2>
+            <Timer counter={counter} />
             <h1>{endGame ? "Congratulation!" : gameOver && "Game Over!"}</h1>
             <Board
                 cards={cards}
@@ -86,7 +85,7 @@ const GameSession = ({ shuffledCards, restart }) => {
                 disabled={disabled}
                 solved={solved}
             />
-            <button className="restart-btn" onClick={restart}> Restart </button> 
+            <button className="restart-btn" onClick={restart}> Restart </button>
             <Link to="/">
                 <button className="restart-btn" >Change parameters</button>
             </Link>
