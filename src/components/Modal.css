@@ -1,5 +1,5 @@
 .modal-wrapper {
-    position: fixed;
+    position: absolute;
     top: 0;
     bottom: 0;
     left: 0;
@@ -34,5 +34,12 @@
     .modal-box {
         padding: 10px 0;
         width: 100%;
+    }
+}
+@media (max-width: 320px) {
+    .modal-box {
+        padding: 10px 0;
+        width: 100%;
+        top: 60%;
     }
 }

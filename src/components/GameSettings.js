@@ -13,7 +13,7 @@ const GameSettings = ({restart}) => {
   const [activeSuggestion, setActiveSuggestion] = useState(0)
   const [filteredSuggestions, setFilteredSuggestions] = useState([])
   const [showSuggestions, setShowSuggestions] = useState(false)
-  const [userInput, setUserInput] = useState("")
+  const [userInput, setUserInput] = useState('')
 
   const categories = [
     { type: 'food', img: '/img/food.jpg' },
@@ -33,6 +33,10 @@ const GameSettings = ({restart}) => {
   useEffect(() => {
     fetchDataFilter()
   }, [])
+
+    useEffect(() => {
+        console.log(userInput)
+    })
 
   const onChange = e => {
     setUserInput(e.currentTarget.value)
@@ -74,7 +78,7 @@ const GameSettings = ({restart}) => {
 
   let suggestionsListComponent;
 
-  if (showSuggestions && userInput) {
+  if (showSuggestions && userInput !== '') {
     if (filteredSuggestions.length) {
       suggestionsListComponent = (
         <ul className="suggestions">
