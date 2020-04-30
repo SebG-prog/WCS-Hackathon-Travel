@@ -1,13 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import Board from './Board'
 
-<<<<<<< HEAD
 import './GameSession.css'
 
-const GameSession = ({ shuffledCards, restart }) => { 
-=======
-const GameSession = ({ shuffledCards }) => {
->>>>>>> link-api-to-modal
+const GameSession = ({ shuffledCards, restart }) => {
     const [flipped, setFlipped] = useState([])
     const [solved, setSolved] = useState([])
     const [disabled, setDisabled] = useState(false)
