@@ -1,7 +1,10 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import Board from './Board'
 import Timer from "./Timer"
 import { Link } from "react-router-dom"
+
+import Modal from './Modal'
+import GameSettings from './GameSettings'
 
 import './GameSession.css'
 
@@ -69,7 +72,7 @@ const GameSession = ({ shuffledCards, restart, query1, query2 }) => {
         const flippedCard = cards.find(card => flipped[0] === card.id)
         return flippedCard.type === clickedCard.type
     }
-
+    const modalRef = useRef();
     return (
         <div className="App" >
 
@@ -87,8 +90,13 @@ const GameSession = ({ shuffledCards, restart, query1, query2 }) => {
             />
             <button className="restart-btn" onClick={restart}> Restart </button>
             <Link to="/">
-                <button className="restart-btn" >Change parameters</button>
             </Link>
+            <button className="restart-btn" onClick={() => modalRef.current.openModal()}>Change parameters</button>
+            <Modal ref={modalRef} >
+                    <h1>Change Parameters</h1>
+                    <button className="close-btn" onClick={() => modalRef.current.closeModal()}>X</button>
+                    <GameSettings restart={restart} />
+                </Modal>
         </div>
     );
 }
