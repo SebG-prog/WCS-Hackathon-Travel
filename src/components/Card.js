@@ -1,10 +1,27 @@
 import React from "react"
 
-const Card = () => {
+import './Card.css'
 
+const Card = ({ solved, disabled, handleClick, id, flipped, height, width, type }) => {
     return (
-        <div>Card</div>
-    )
-}
+        <div
+            className={`flip-container ${flipped ? 'flipped' : ''}`}
+            style={{
+                width, height
+            }}
+            onClick={() => disabled ? null : handleClick(id)}
+        >
+            <div className="flipper">
+                <img
+                    style={{
+                        height, width
+                    }}
+                    className={flipped ? 'front' : 'back'}
+                    src={flipped || solved ? type : `/img/plane.jpg`}
+                    alt="memory" />
+            </div>
+        </div>
+    );
+};
 
 export default Card

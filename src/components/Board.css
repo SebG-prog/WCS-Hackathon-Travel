@@ -1,0 +1,13 @@
+.board {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 3rem;
+    padding: 0px;
+    display: grid;
+    align-content: stretch;
+    grid-template-columns: repeat(auto-fit, 256px);
+    grid-gap: 1rem;
+    grid-auto-rows: minmax(180px, auto);
+    justify-content: center;
+}
