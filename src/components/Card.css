@@ -1,8 +1,8 @@
 .flip-container {
     perspective: 1000px;
     display: inline-block;
-    border: 1px solid white;
     border-radius: 10px;
+    overflow: hidden;
 }
 
 .flip-container.flipped .flipper {
@@ -13,6 +13,7 @@
     transition: 0.6s;
     transform-style: preserve-3d;
     position: relative;
+    align-content: center;
 }
 
 .front,

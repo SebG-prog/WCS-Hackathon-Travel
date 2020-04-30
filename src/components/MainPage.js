@@ -20,6 +20,7 @@ function MainPage(props) {
                 key: API_KEY,
                 q: `${query1} + ${query2}`,
                 image_type: "photo",
+                orientation: "horizontal"
             },
         });
         setData(shuffle(result.data.hits).slice(0, 8))
