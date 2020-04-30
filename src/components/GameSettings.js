@@ -6,8 +6,9 @@ import axios from 'axios';
 
 import './GameSettings.css'
 
-const GameSettings = ({restart}) => {
+const GameSettings = ({ restart }) => {
   const [dataFilter, setDataFilter] = useState([])
+  const [idFilter, setIdFilter] = useState([])
   const [getCat, setGetCat] = useState('')
   const [isLoaded, setIsLoaded] = useState(false)
   const [activeSuggestion, setActiveSuggestion] = useState(0)
@@ -25,18 +26,21 @@ const GameSettings = ({restart}) => {
   ]
 
   const fetchDataFilter = async () => {
-    const resultFilter = await axios('https://cors-anywhere.herokuapp.com/http://countryapi.gear.host/v1/Country/getCountries?pAreaFrom=25000')
-    setDataFilter(resultFilter.data.Response.map(res => res.Name))
+    const resultFilter = await axios(`https://api.windy.com/api/webcams/v2/list?show=countries`,
+      {
+        params: {
+          key: "v86LqZILmLPm1rCHTj4eDCcDGKc3Fveq"
+        }
+      })
+    const countriesFilter = resultFilter.data.result.countries.map(res => res)
+    setDataFilter(countriesFilter.map(country => country.name))
+    setIdFilter(countriesFilter.map(country => country.id))
     setIsLoaded(!isLoaded)
   }
 
   useEffect(() => {
     fetchDataFilter()
   }, [])
-
-    useEffect(() => {
-        console.log(userInput)
-    })
 
   const onChange = e => {
     setUserInput(e.currentTarget.value)
@@ -139,7 +143,7 @@ const GameSettings = ({restart}) => {
             )
           }
         </div>
-        <NavLink activeClassName="active" exact to={{ pathname: '/mainpage', query2: getCat, query1: userInput }}>
+        <NavLink activeClassName="active" exact to={{ pathname: '/mainpage', query2: getCat, query1: userInput, idCountries: idFilter, nameCountry: dataFilter }}>
           <button className="start-btn setting-btn" onClick={restart}>Start game</button>
         </NavLink>
       </form>
