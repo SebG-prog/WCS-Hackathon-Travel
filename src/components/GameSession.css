@@ -21,7 +21,7 @@
     cursor: pointer;
     transition: all 100ms linear;
 }
-.btn:hover {
+.restart-btn:hover {
     -moz-transform: translateY(-4px);
     -o-transform: translateY(-4px);
     -ms-transform: translateY(-4px);
@@ -29,6 +29,6 @@
     transform: translateY(-4px);
     box-shadow: 0 7px 0 #FF5E5B;
 }
-.btn:focus {
+.restart-btn:focus {
     outline: 0;
 }
