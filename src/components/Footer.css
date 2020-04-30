@@ -1,0 +1,35 @@
+.Footer {
+  color: white;
+  margin: 0 1em;
+  line-height: 25px;
+}
+
+.Footer a {
+  color: white;
+  text-decoration-line: none;
+  padding: 5px;
+}
+
+.marjo:hover {
+ background-color: #FFA430;
+}
+
+.lola:hover {
+ background-color: #E87A2C;
+}
+
+.seb:hover {
+ background-color: #FF713D;
+}
+
+.lena:hover {
+ background-color: #E8432C;
+}
+
+.claire:hover {
+ background-color: #FF3042;
+}
+
+.ari:hover {
+  background-color: rgb(255, 0, 21);
+}
