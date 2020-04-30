@@ -2,15 +2,16 @@ import React, { useState, useEffect } from "react"
 import axios from "axios"
 
 
-const API_KEY = "v86LqZILmLPm1rCHTj4eDCcDGKc3Fveq";
-const countryId = "FR"
-const category = "beach"
-const orderby = "popularity"
-const limit = 10
 
-function ApiWindy() {
+
+function ApiWindy( props ) {
     const [data, setData] = useState([]);
     const [isLoaded, setIsLoaded] = useState(false);
+    const API_KEY = "v86LqZILmLPm1rCHTj4eDCcDGKc3Fveq";
+    const countryId = props.location.idCountry
+    const category = "beach"
+    const orderby = "popularity"
+    const limit = 10
 
     const fetchData = async () => {
         setIsLoaded(false);

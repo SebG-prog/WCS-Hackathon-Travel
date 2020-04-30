@@ -8,15 +8,15 @@ import GameSettings from './GameSettings'
 
 import './GameSession.css'
 
-const GameSession = ({ shuffledCards, restart, query1, query2, idCountry }) => {
+const GameSession = props => {
     const [flipped, setFlipped] = useState([])
     const [solved, setSolved] = useState([])
     const [disabled, setDisabled] = useState(false)
-    const [counter, setCounter] = useState(60);
+    const [counter, setCounter] = useState(600);
     const [endGame, setEndGame] = useState(false)
     const [gameOver, setGameOver] = useState(false)
-    const cards = shuffledCards
-
+    const cards = props.shuffledCards
+    console.log("1",props.idCountry)
     useEffect(() => {
         const timer =
             counter > 0 && setInterval(() => setCounter(counter - 1), 1000);
@@ -77,13 +77,13 @@ const GameSession = ({ shuffledCards, restart, query1, query2, idCountry }) => {
     return (
         <div className="App" >
             <h1 className="game-title">Flip and Match!</h1>
-            <h2 style={{ color: 'white' }}>Your choice : {query1} and {query2}</h2>
+            <h2 style={{ color: 'white' }}>Your choice : {props.query1} and {props.query2}</h2>
             <Timer counter={counter} />
             <div>{endGame ? 
             (<>
                 <h1>"Congratulation!" </h1>
-                <NavLink exact to={{ pathname: '/endpage', idCountry:{idCountry} }}>
-                <button >See what you got</button>
+                <NavLink exact to={{ pathname: '/endpage', idCountry:props.idCountry }}>
+                <button className="restart-btn">See what you got</button>
                 </NavLink>
             </>)
             : gameOver && "Game Over!"}</div>
@@ -94,13 +94,13 @@ const GameSession = ({ shuffledCards, restart, query1, query2, idCountry }) => {
                 disabled={disabled}
                 solved={solved}
             />
-            <button className="restart-btn" onClick={restart}> Restart </button>
+            <button className="restart-btn" onClick={props.restart}> Restart </button>
             
             <button className="restart-btn" onClick={() => modalRef.current.openModal()}>Change parameters</button>
             <Modal ref={modalRef} >
                     <h1>Change Parameters</h1>
                     <button className="close-btn" onClick={() => modalRef.current.closeModal()}>X</button>
-                    <GameSettings restart={restart} />
+                    <GameSettings restart={props.restart} />
             </Modal>
         </div>
     );
