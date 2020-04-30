@@ -71,7 +71,7 @@ const GameSession = ({ shuffledCards, restart }) => {
 
     return (
         <div className="App" >
-            <h1>{endGame ? "Congratulation!" : gameOver ? "Game Over!" : "Memory"}</h1>
+            <h1>{endGame ? "Congratulation!" : gameOver && "Game Over!"}</h1>
             <Timer counter={counter}/>
             <h1 className="game-title">Flip and Match!</h1>
             <button className="restart-btn" onClick={restart}> Restart </button>
