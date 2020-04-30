@@ -8,8 +8,8 @@ import "./MainPage.css"
 
 function MainPage(props) {
   const API_KEY = "16289190-97a0bc0be3bee47cca51d8097";
-  const query1 = "france";
-  const query2 = props.location.state;
+  const query1 = props.location.query1;
+  const query2 = props.location.query2;
   const [data, setData] = useState([]);
   const [isLoaded, setIsLoaded] = useState(false);
 
