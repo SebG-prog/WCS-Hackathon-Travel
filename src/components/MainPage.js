@@ -14,6 +14,7 @@ function MainPage(props) {
     const [isLoaded, setIsLoaded] = useState(false);
 
     const fetchData = async () => {
+        setIsLoaded(false);
         const result = await axios("https://pixabay.com/api/", {
             params: {
                 key: API_KEY,
@@ -22,7 +23,7 @@ function MainPage(props) {
             },
         });
         setData(shuffle(result.data.hits).slice(0, 8))
-        setIsLoaded(!isLoaded);
+        setIsLoaded(true);
     };
 
     useEffect(() => {
