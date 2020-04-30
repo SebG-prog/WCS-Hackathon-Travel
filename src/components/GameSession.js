@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import Board from './Board'
 import Timer from "./Timer";
+import LandingPage from './LandingPage'
+import {Link} from "react-router-dom"
 
 import './GameSession.css'
 
@@ -71,10 +73,12 @@ const GameSession = ({ shuffledCards, restart }) => {
 
     return (
         <div className="App" >
-            <h1>{endGame ? "Congratulation!" : gameOver ? "Game Over!" : "Memory"}</h1>
-            <Timer counter={counter}/>
+            
+            
             <h1 className="game-title">Flip and Match!</h1>
-            <button className="restart-btn" onClick={restart}> Restart </button>
+            <h2 style={{color:'white'}}>Your choice : $Country and $ Category</h2>
+            <Timer counter={counter}/>
+            <h1>{endGame ? "Congratulation!" : gameOver && "Game Over!"}</h1>
             <Board
                 cards={cards}
                 flipped={flipped}
@@ -82,6 +86,10 @@ const GameSession = ({ shuffledCards, restart }) => {
                 disabled={disabled}
                 solved={solved}
             />
+            <button className="restart-btn" onClick={restart}> Restart </button> 
+            <Link to="/">
+                <button className="restart-btn" >Change parameters</button>
+            </Link>
         </div>
     );
 }
