@@ -25,7 +25,7 @@ const GameSession = ({ shuffledCards, restart }) => {
     })
 
     useEffect(()=> {
-        if (solved.length === maxNbCards * 2) {setEndGame(true)} 
+        if (solved.length === 8 * 2) {setEndGame(true)} 
     }, [solved])
 
     useEffect(()=> {
