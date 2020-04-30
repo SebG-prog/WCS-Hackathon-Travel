@@ -1,6 +1,5 @@
 import React from 'react';
 
-import ApiFilter from './components/ApiFilter'
 import { Route, Switch } from "react-router-dom";
 import LandingPage from './components/LandingPage';
 import MainPage from './components/MainPage';

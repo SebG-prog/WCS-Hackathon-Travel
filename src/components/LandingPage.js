@@ -1,10 +1,8 @@
 import React, { useRef } from "react"
 
-
 import Modal from './Modal'
 import GameSettings from './GameSettings'
-import  "./LandingPage.css"
-
+import "./LandingPage.css"
 
 const LandingPage = () => {
     const modalRef = useRef();
