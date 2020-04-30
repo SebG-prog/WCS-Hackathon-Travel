@@ -20,7 +20,7 @@ function ApiWindy() {
                     key: API_KEY
                 }
             })
-        setData(console.log(result.data.result.webcams) || result.data.result.webcams);
+        setData(result.data.result.webcams);
         setIsLoaded(true);
     };
 
