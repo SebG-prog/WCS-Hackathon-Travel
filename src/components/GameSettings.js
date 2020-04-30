@@ -115,7 +115,6 @@ const GameSettings = ({ restart }) => {
   return (
     <div>
       <form>
-<<<<<<< HEAD
           <label className="search-text">Which country do you want to travel to?</label>
           <Autocomplete
             onChange={onChange}
@@ -124,16 +123,6 @@ const GameSettings = ({ restart }) => {
             suggestionsListComponent={suggestionsListComponent}
           />
         <h4>Choose a category</h4>
-=======
-        <label>Which country do you want to travel to?</label>
-        <Autocomplete
-          onChange={onChange}
-          onKeyDown={onKeyDown}
-          userInput={userInput}
-          suggestionsListComponent={suggestionsListComponent}
-        />
-        <p>Choose a category</p>
->>>>>>> 9d44211dab39b16f100f412b5ed08af3009dd25c
         <div className="cat-container" >
           {
             categories.map((cat, index) =>
