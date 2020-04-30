@@ -1,17 +1,36 @@
 import React, { useState, useEffect } from 'react'
 import Board from './Board'
+import Timer from "./Timer";
 
 import './GameSession.css'
 
-const GameSession = ({ shuffledCards, restart }) => { 
+const GameSession = ({ shuffledCards, restart }) => {
     const [flipped, setFlipped] = useState([])
     const [solved, setSolved] = useState([])
     const [disabled, setDisabled] = useState(false)
+    const [counter, setCounter] = useState(60);
+    const [endGame, setEndGame] = useState(false)
+    const [gameOver, setGameOver] = useState(false)
+    
     const cards = shuffledCards
+
+    useEffect(() => {
+        const timer =
+            counter > 0 && setInterval(() => setCounter(counter - 1), 1000);
+        return () => clearInterval(timer);
+    }, [counter]);
 
     useEffect(() => {
         preloadImages()
     })
+
+    useEffect(()=> {
+        if (solved.length === 8 * 2) {setEndGame(true)} 
+    }, [solved])
+
+    useEffect(()=> {
+        if (counter === 0) {setGameOver(true)} 
+    }, [counter])
 
     const preloadImages = () => {
         cards.map((card) => {
@@ -52,6 +71,8 @@ const GameSession = ({ shuffledCards, restart }) => {
 
     return (
         <div className="App" >
+            <h1>{endGame ? "Congratulation!" : gameOver ? "Game Over!" : "Memory"}</h1>
+            <Timer counter={counter}/>
             <h1 className="game-title">Flip and Match!</h1>
             <button className="restart-btn" onClick={restart}> Restart </button>
             <Board

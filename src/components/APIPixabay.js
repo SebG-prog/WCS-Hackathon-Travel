@@ -4,12 +4,13 @@ import GameSession from './GameSession'
 import Loader from './Loader'
 import axios from "axios";
 
-import "./MainPage.css"
 
-function MainPage(props) {
-  const API_KEY = "16289190-97a0bc0be3bee47cca51d8097";
-  const query1 = props.location.query1;
-  const query2 = props.location.query2;
+const API_KEY = "16289190-97a0bc0be3bee47cca51d8097";
+const query1 = "france";
+const query2 = "food";
+const maxNbCards = 8
+
+function APIPixabay() {
   const [data, setData] = useState([]);
   const [isLoaded, setIsLoaded] = useState(false);
 
@@ -21,12 +22,12 @@ function MainPage(props) {
         image_type: "photo",
       },
     });
-    setData(shuffle(result.data.hits).slice(0, 8))
+    setData(shuffle(result.data.hits).slice(0, maxNbCards));
     setIsLoaded(!isLoaded);
   };
 
   useEffect(() => {
-    fetchData()
+    fetchData();
   }, []);
 
   const shuffle = (array) => {
@@ -40,19 +41,25 @@ function MainPage(props) {
     return _array
   }
 
-  const tab1 = data.map((picture, index) => ({ id: index, type: picture.webformatURL }))
-  const tab2 = data.map((picture, index) => ({ id: index + 8, type: picture.webformatURL }))
-  const cards = [...tab1, ...tab2]
+    const tab1 = data.map((picture, index)=> ({id: index, type: picture.webformatURL}))
+    const tab2 = data.map((picture, index)=> ({id: index + maxNbCards, type: picture.webformatURL}))
+    const cards = [...tab1, ...tab2]
 
   return (
-    <div className="mainPage">
+    <div className="App">
+      <div>
+        <p>Query: {query1}</p>
+        <p>Category : {query2}</p>
+      </div>
+      
       {isLoaded ? (
-        <GameSession shuffledCards={shuffle(cards)} restart={fetchData} />
+        <GameSession shuffledCards={shuffle(cards)} maxNbCards={maxNbCards}/>
       ) : (
-          <Loader />
-        )}
+        <Loader />
+      )} 
     </div>
   );
 }
 
-export default MainPage
+export default APIPixabay;
+// {isLoading && !isLoaded && 
