@@ -78,7 +78,7 @@ const GameSession = props => {
         <div className="App" >
             <h1 className="game-title">Flip and Match!</h1>
             <h2 style={{ color: 'white' }}>Your choice : {props.query1} and {props.query2}</h2>
-            <Timer counter={counter} />
+            
             <div>{endGame ? 
             (<>
                 <h1>"Congratulation!" </h1>
@@ -86,7 +86,11 @@ const GameSession = props => {
                 <button className="restart-btn">See what you got</button>
                 </NavLink>
             </>)
-            : gameOver && "Game Over!"}</div>
+            : gameOver && <h1>Game Over!</h1>}</div>
+            {endGame || gameOver? 
+            "" : 
+            <>
+            <Timer counter={counter} />
             <Board
                 cards={cards}
                 flipped={flipped}
@@ -94,6 +98,8 @@ const GameSession = props => {
                 disabled={disabled}
                 solved={solved}
             />
+            </>}
+            
             <button className="restart-btn" onClick={props.restart}> Restart </button>
             
             <button className="restart-btn" onClick={() => modalRef.current.openModal()}>Change parameters</button>
