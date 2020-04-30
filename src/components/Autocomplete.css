@@ -28,8 +28,8 @@ input {
 
 .suggestion-active,
 .suggestions li:hover {
-    background-color: #008f68;
-    color: #fae042;
+    background-color: #FF5E5B;
+    color: white;
     cursor: pointer;
     font-weight: 700;
 }

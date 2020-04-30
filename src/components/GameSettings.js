@@ -14,7 +14,7 @@ const GameSettings = ({ restart }) => {
   const [activeSuggestion, setActiveSuggestion] = useState(0)
   const [filteredSuggestions, setFilteredSuggestions] = useState([])
   const [showSuggestions, setShowSuggestions] = useState(false)
-  const [userInput, setUserInput] = useState("")
+  const [userInput, setUserInput] = useState('')
 
   const categories = [
     { type: 'food', img: '/img/food.jpg' },
@@ -82,7 +82,7 @@ const GameSettings = ({ restart }) => {
 
   let suggestionsListComponent;
 
-  if (showSuggestions && userInput) {
+  if (showSuggestions && userInput !== '') {
     if (filteredSuggestions.length) {
       suggestionsListComponent = (
         <ul className="suggestions">
@@ -115,14 +115,14 @@ const GameSettings = ({ restart }) => {
   return (
     <div>
       <form>
-        <label>Which country do you want to travel to?</label>
-        <Autocomplete
-          onChange={onChange}
-          onKeyDown={onKeyDown}
-          userInput={userInput}
-          suggestionsListComponent={suggestionsListComponent}
-        />
-        <p>Choose a category</p>
+          <label className="search-text">Which country do you want to travel to?</label>
+          <Autocomplete
+            onChange={onChange}
+            onKeyDown={onKeyDown}
+            userInput={userInput}
+            suggestionsListComponent={suggestionsListComponent}
+          />
+        <h4>Choose a category</h4>
         <div className="cat-container" >
           {
             categories.map((cat, index) =>
@@ -131,7 +131,7 @@ const GameSettings = ({ restart }) => {
                 className="cat"
                 key={index}
                 type={cat.type}>
-                <p className="cat-type">
+                <p className={`cat-type ${getCat===cat.type && "selected-filter"}`}>
                   {cat.type}
                 </p>
                 <img

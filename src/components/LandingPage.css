@@ -19,6 +19,7 @@
     flex-direction: column;
     justify-content: center;
     align-content: center;
+    margin-top: 20%;
 }
 
 .memory-travel {
@@ -28,6 +29,7 @@
     font-family: 'Righteous', cursive;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 20%;
     
 }
 
