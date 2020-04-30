@@ -26,7 +26,14 @@ const GameSession = ({ shuffledCards, restart, query1, query2 }) => {
 
     useEffect(() => {
         preloadImages()
-    })
+    }, [])
+
+    const preloadImages = () => {
+        cards.map((card) => {
+            const src = card.type
+            return new Image().src = src
+        })
+    }
 
     useEffect(() => {
         if (solved.length === 8 * 2) { setEndGame(true) }
@@ -36,12 +43,7 @@ const GameSession = ({ shuffledCards, restart, query1, query2 }) => {
         if (counter === 0) { setGameOver(true) }
     }, [counter])
 
-    const preloadImages = () => {
-        cards.map((card) => {
-            const src = card.type
-            return new Image().scr = src
-        })
-    }
+    
 
     const handleClick = (id) => {
         setDisabled(true)

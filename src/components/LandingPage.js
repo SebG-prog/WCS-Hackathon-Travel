@@ -10,7 +10,7 @@ const LandingPage = () => {
     return (
         <div className="landingPage">
             <div className="landing-text">
-                <h1 className="memory-travel">Memory Travel Game</h1>
+                <h1 className="memory-travel">Travel Memory Game</h1>
                 <button className="button-enter" onClick={() => modalRef.current.openModal()}>Enter</button>
             </div>
                 <Modal ref={modalRef} >
