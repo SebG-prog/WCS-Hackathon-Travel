@@ -107,14 +107,14 @@ const GameSettings = ({restart}) => {
   return (
     <div>
       <form>
-          <label>Which country do you want to travel to?</label>
+          <label className="search-text">Which country do you want to travel to?</label>
           <Autocomplete
             onChange={onChange}
             onKeyDown={onKeyDown}
             userInput={userInput}
             suggestionsListComponent={suggestionsListComponent}
           />
-        <p>Choose a category</p>
+        <h4>Choose a category</h4>
         <div className="cat-container" >
           {
             categories.map((cat, index) =>
@@ -123,7 +123,7 @@ const GameSettings = ({restart}) => {
                 className="cat"
                 key={index}
                 type={cat.type}>
-                <p className="cat-type">
+                <p className={`cat-type ${getCat===cat.type && "selected-filter"}`}>
                   {cat.type}
                 </p>
                 <img

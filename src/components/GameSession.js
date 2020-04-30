@@ -39,7 +39,7 @@ const GameSession = ({ shuffledCards, restart, query1, query2 }) => {
     const preloadImages = () => {
         cards.map((card) => {
             const src = card.type
-            return new Image().scr = src
+            return new Image().src = src
         })
     }
 
