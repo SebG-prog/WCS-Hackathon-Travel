@@ -9,6 +9,8 @@ const limit = 10
 
 //Timelapse in the player key
 
+//Actullement récupère un tableau de 10 webcams avec toutes les infos nécessaire dans data
+
 function ApiWindy() {
     const [data, setData] = useState([]);
     // const [data2, setData2] = useState([]); // A remettre pour voir la liste des pays dispo (en dessous)
