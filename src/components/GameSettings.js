@@ -97,7 +97,7 @@ const GameSettings = () => {
       );
     } else {
       suggestionsListComponent = (
-        <div class="no-suggestions">
+        <div classClass="no-suggestions">
           <em>No suggestions, you're on your own!</em>
         </div>
       );
