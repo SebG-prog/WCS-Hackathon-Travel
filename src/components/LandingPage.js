@@ -12,14 +12,14 @@ const LandingPage = () => {
     return (
         <div className="landingPage">
             <div className="landing-text">
-                <p className="memory-travel">Memory Travel Game</p>
+                <h1 className="memory-travel">Memory Travel Game</h1>
                 <button className="button-enter" onClick={() => modalRef.current.openModal()}>Enter</button>
+            </div>
                 <Modal ref={modalRef} >
                     <h1>New Game</h1>
                     <GameSettings />
                     <button onClick={() => modalRef.current.closeModal()}>Close</button>
                 </Modal>
-            </div>
         </div>
     )
 }

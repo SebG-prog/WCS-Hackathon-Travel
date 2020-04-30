@@ -1,65 +1,52 @@
 @import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
 
-.button-enter {
-    margin-right: -100px;
-    margin-top: -120px;
-    border-radius: 100%;
-    width: 80px;
-    height: 80px;
-    color: #be1010;
-    background-color: rgb(4, 4, 43);
-    font-family: 'Righteous', cursive;
-    font-size: 20px;
-    
-}
-
-.landingPage {
+.landingPage { 
+    display: flex;
     background-color: #0098ca;
     background-image: url(./travel.png);
     background-size: 100%;
     background-repeat:no-repeat;
     background-position: center;
-    min-height: 100%;
-    min-width: 1024px;
-      
-    /* Set up proportionate scaling */
     width: 100%;
-    height: auto;
+    min-height: 100vh;;
       
-    /* Set up positioning */
-    position: fixed;
-    top: 0;
-    left: 0;
-      
-    /* Set up positioning */
-    position: fixed;
-    top: 0;
-    left: 0;
-    
+   display: flex;
+   justify-content: center;
+   align-content: center;
 }
 
 .landing-text {
     display: flex;
     flex-direction: column;
-    position:absolute;
-    left: 50%;
-    top: 50%;
-    width: 200px;
-    height: 200px;
-    margin-left: -140px; /* Cette valeur doit être la moitié négative de la valeur du width */
-    margin-top: -200px;
-    
+    justify-content: center;
+    align-content: center;
 }
 
 .memory-travel {
     display: flex;
     color: #be1010;
-    font-size: 80px;
+    font-size: 5rem;
     font-family: 'Righteous', cursive;
-    margin-bottom: 30px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-@media only screen  and (min-width: 768px) and (max-width: 1024px) {
+.button-enter {
+    /* margin-right: -100px; */
+    /* margin-top: -120px; */
+    border-radius: 100%;
+    width: 5rem;
+    height: 5rem;
+    color: #be1010;
+    background-color: rgb(4, 4, 43);
+    font-family: 'Righteous', cursive;
+    font-size: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* @media only screen  and (min-width: 768px) and (max-width: 1024px) {
 
     p {
     display: block;
@@ -70,7 +57,7 @@
     }
 
     .landingPage {
-        background-color: yellow;
+        background-color: #0098ca;
         background-image: url(./globe.jpg);
         background-size: 80%;
         background-repeat: no-repeat;
@@ -100,7 +87,7 @@
 
     .landingPage {
         display: flex;
-        background-color: red;
+        background-color: #0098ca;
         background-image: url(./globe.jpg);
         background-size: 40%;
         background-repeat:no-repeat;
@@ -162,4 +149,4 @@
 
 
     
-}
+} */
