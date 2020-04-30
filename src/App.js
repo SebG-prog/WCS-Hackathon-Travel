@@ -7,10 +7,12 @@ import MainPage from './components/MainPage';
 
 
 import './App.css';
+import ApiWindy from './components/ApiWindy';
 
 function App() {
   return (
     <div className="App">
+      <ApiWindy />
       <ApiFilter />
       <Switch>
         <Route exact path="/" component={LandingPage} />
