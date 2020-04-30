@@ -1,6 +1,5 @@
 import React from 'react';
 
-import ApiFilter from './components/ApiFilter'
 import { Route, Switch } from "react-router-dom";
 import LandingPage from './components/LandingPage';
 import MainPage from './components/MainPage';
@@ -13,6 +12,7 @@ function App() {
   return (
     <div className="App">
       <Switch>
+        <ApiWindy/>
         <Route exact path="/" component={LandingPage} />
         <Route path="/mainpage" component={MainPage} />
       </Switch>
