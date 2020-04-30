@@ -21,7 +21,6 @@
     backface-visibility: hidden;
     position: absolute;
     border-radius: 10px;
-    border: 2px dotted pink;
     left: 0;
     top: 0;
 }

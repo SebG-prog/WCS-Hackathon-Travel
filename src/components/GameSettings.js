@@ -106,7 +106,7 @@ const GameSettings = ({ restart }) => {
     } else {
       suggestionsListComponent = (
         <div className="no-suggestions">
-          <em>No suggestions, you're on your own!</em>
+          <em>If it doesn't match to the country, you get on your own!</em>
         </div>
       );
     }

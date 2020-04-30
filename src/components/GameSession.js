@@ -12,7 +12,7 @@ const GameSession = props => {
     const [flipped, setFlipped] = useState([])
     const [solved, setSolved] = useState([])
     const [disabled, setDisabled] = useState(false)
-    const [counter, setCounter] = useState(600);
+    const [counter, setCounter] = useState(60);
     const [endGame, setEndGame] = useState(false)
     const [gameOver, setGameOver] = useState(false)
     const cards = props.shuffledCards
