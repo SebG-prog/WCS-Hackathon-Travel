@@ -1,68 +1,62 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Travel Memory Game
+👉[The app is live here](https://travel-memory-game.netlify.app) 👈 
 
-## Available Scripts
+The **Travel Memory Game** is a front-end web application developed on April 29th/30th during a 24h remote hackathon at the [Wild Code School](https://www.wildcodeschool.com/en-GB). The topic was: travelling from the couch.
 
-In the project directory, you can run:
+## The team
 
-### `npm start`
+* Marjolaine Baratte [Github](https://github.com/marjowolff) - [LinkedIn](https://www.linkedin.com/in/marjolainebaratte/)
+* Lola Donval [Github](https://github.com/Lola-D) - [LinkedIn](https://www.linkedin.com/in/lola-donval/)
+* Sébastien Gruet [Github](https://github.com/SebG-prog) - [LinkedIn](https://www.linkedin.com/in/sebastien-gruet/)
+* Lena Hailin Sim [Github](https://github.com/Lenasim) - [LinkedIn](https://www.linkedin.com/in/lena-hailin-sim/)
+* Claire Kodia [Github](https://github.com/clrko') - [LinkedIn](https://www.linkedin.com/in/clairekodia/)
+* Aristide Ouedraogo[Github](https://github.com/ariomega) - [LinkedIn](https://www.linkedin.com/in/aristide-ouedraogo/)
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## The project
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+The projet was part of a web developement training program at the [Wild Code School](https://www.wildcodeschool.com/en-GB) during a 24h remote hackathon (April 2020). 
 
-### `npm test`
+We decided to design a game that a user in lockdown would play in order to travel through webcam videos of a country of his choice. 
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+In order to play, you first need to select a country and a category. Then, based on these two criteria, a memory game session will be generated. The objective is to find the 8 matching cards to win an access to the webcam of the chosen country.
 
-### `npm run build`
+Developing a game has been a good way to materialize what we had been learning during the first one and half months of the program. We managed to consolidate our skills in React.js, to manipulate data using an API and learn how to use the React.js State Hooks. This hackathon has been an even more challenging project as we needed to work remotely.
+ 
+## Features
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+* Choice between multiple countries
+* Choice between 6 images categories
+* Game session to try and find the 8 matching pairs
+* Access to the webcams of the choosen country at the end of the game session
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+## Technologies
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+* React.js (State Hooks)
+* JavaScript
+* HTML5
+* CSS3
 
-### `npm run eject`
+## Hosting
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+* Netlify 
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## API used
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+* [Pixabay](https://pixabay.com/api/docs/): we got from the api the images to be displayed in the game session based on 2 parameters: the country and the category (beach, nature, etc.)
+* [Windy](https://api.windy.com/webcams/docs): we got an access to a repository of webcams based on the country selected by the user.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Screenshots
 
-## Learn More
+<div style="display:flex; justify-content:space-around; margin:30px 0;">
+<img src="/public/screenshots/homepage.png" alt="desktop-homepage" style="width:200px heigth:auto"/>
+<img src="/public/screenshots/game-settings.png" alt="desktop-settings" style="width:200px heigth:auto"/>
+<img src="/public/screenshots/game.png" alt="desktop-game" style="width:200px heigth:auto"/>
+<img src="/public/screenshots/webcam.png" alt="desktop-webcam" style="width:200px heigth:auto"/>
+</div>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## In the project directory, you can run:
+* `npm install`
+* `npm start`
 
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+These commands install the dependencies and start the app in the developement mode.
