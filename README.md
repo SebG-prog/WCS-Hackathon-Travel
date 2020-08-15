@@ -10,7 +10,7 @@ The **Travel Memory Game** is a front-end web application developed on April 29t
 * Sébastien Gruet [Github](https://github.com/SebG-prog) - [LinkedIn](https://www.linkedin.com/in/sebastien-gruet/)
 * Lena Hailin Sim [Github](https://github.com/Lenasim) - [LinkedIn](https://www.linkedin.com/in/lena-hailin-sim/)
 * Claire Kodia [Github](https://github.com/clrko') - [LinkedIn](https://www.linkedin.com/in/clairekodia/)
-* Aristide Ouedraogo[Github](https://github.com/ariomega) - [LinkedIn](https://www.linkedin.com/in/aristide-ouedraogo/)
+* Aristide Ouedraogo [Github](https://github.com/ariomega) - [LinkedIn](https://www.linkedin.com/in/aristide-ouedraogo/)
 
 ## The project
 
