@@ -42,6 +42,7 @@ const GameSettings = ({ restart }) => {
 
   useEffect(() => {
     fetchDataFilter()
+    // eslint-disable-next-line
   }, [])
 
   const onChange = e => {

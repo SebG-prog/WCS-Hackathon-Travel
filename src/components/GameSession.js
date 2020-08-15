@@ -25,6 +25,7 @@ const GameSession = props => {
 
     useEffect(() => {
         preloadImages()
+        // eslint-disable-next-line
     }, [])
 
     const preloadImages = () => {
