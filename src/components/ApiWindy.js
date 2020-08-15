@@ -8,7 +8,7 @@ import "./ApiWindy.css"
 const ApiWindy = props => {
     const [data, setData] = useState([]);
     const [isLoaded, setIsLoaded] = useState(false);
-    const API_KEY = "v86LqZILmLPm1rCHTj4eDCcDGKc3Fveq";
+    const API_KEY = process.env.REACT_APP_API_KEY_WINDY;
     const countryId = props.location.idCountry
     const category = "beach"
     const orderby = "popularity"

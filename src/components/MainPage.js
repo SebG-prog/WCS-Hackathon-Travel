@@ -7,7 +7,7 @@ import axios from "axios";
 import "./MainPage.css"
 
 const MainPage = props => {
-    const API_KEY = "16289190-97a0bc0be3bee47cca51d8097";
+    const API_KEY = process.env.REACT_APP_API_KEY_PIXABAY;
     const query1 = props.location.query1;
     const query2 = props.location.query2;
     const idCountries = props.location.idCountries;

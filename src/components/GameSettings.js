@@ -16,6 +16,8 @@ const GameSettings = ({ restart }) => {
   const [showSuggestions, setShowSuggestions] = useState(false)
   const [userInput, setUserInput] = useState('')
 
+  const API_KEY = process.env.REACT_APP_API_KEY_WINDY;
+
   const categories = [
     { type: 'food', img: '/img/food.jpg' },
     { type: 'nature', img: '/img/nature.jpg' },
@@ -29,7 +31,7 @@ const GameSettings = ({ restart }) => {
     const resultFilter = await axios(`https://api.windy.com/api/webcams/v2/list?show=countries`,
       {
         params: {
-          key: "v86LqZILmLPm1rCHTj4eDCcDGKc3Fveq"
+          key: API_KEY
         }
       })
     const countriesFilter = resultFilter.data.result.countries.map(res => res)
