@@ -31,6 +31,7 @@ const MainPage = props => {
 
     useEffect(() => {
         fetchData()
+        // eslint-disable-next-line
     }, []);
 
     const shuffle = (array) => {
